@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/j-j-jones/udacity-devops-capstone-blue.git'
+        git 'https://github.com/j-j-jones/udacity-devops-capstone-green.git'
       }
     }
     stage('Linting HTML') {
@@ -54,7 +54,7 @@ pipeline {
     }
   }
   environment {
-    registry = 'jjjones/udacity-devops-capstone-blue'
+    registry = 'jjjones/udacity-devops-capstone-green'
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
