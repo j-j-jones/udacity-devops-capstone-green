@@ -52,7 +52,7 @@ pipeline {
     stage('Apply K8 File') {
       steps {
         withAWS(credentials: 'aws-key', region: 'us-east-1') {
-          sh 'kubectl apply -f green-controller.json'
+          //sh 'kubectl apply -f green-controller.json'
           echo 'Success'
         }
 
