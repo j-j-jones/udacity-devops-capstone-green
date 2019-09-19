@@ -10,7 +10,7 @@
    "spec":{
       "replicas":1,
       "selector":{
-         "app":"blue"
+         "app":"green"
       },
       "template":{
          "metadata":{
@@ -21,7 +21,7 @@
          "spec":{
             "containers":[
                {
-                  "name":"blue",
+                  "name":"green",
                   "image":"jjjones/udacity-devops-capstone-green",
                   "ports":[
                      {
