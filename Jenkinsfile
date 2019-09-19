@@ -38,18 +38,22 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage('hello AWS') {
+    stage('Hello AWS') {
       steps {
-        withAWS(credentials: 'aws-static', region: 'us-east-1') {
-          sh 'echo "hello KB">hello.txt'
-          sh 'aws ec2 describe-instances --region us-east-1'
+        withAWS(credentials: 'aws-key', region: 'us-east-1') {
+          echo 'Success'
+          sh 'kubectl config use-context jenkins-2@udacity-devops-capstone-b.us-east-1.eksctl.io '
         }
 
       }
     }
-    stage('Create EKS Cluster') {
+    stage('Apply K8 File') {
       steps {
-        sh 'ls -a'
+        withAWS(credentials: 'aws-key', region: 'us-east-1') {
+          sh 'kubectl apply -f green-controller.json'
+          echo 'Success'
+        }
+
       }
     }
   }
