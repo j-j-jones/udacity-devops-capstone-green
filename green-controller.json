@@ -23,8 +23,8 @@
             "containers":[
                {
                   "name":"green",
-                  "image":"jjjones/udacity-devops-capstone-green:latest",
-                  "imagePullPolicy":"Always",
+                  "image":"jjjones/udacity-devops-capstone-green",
+                  //"imagePullPolicy":"Always",
                   "ports":[
                      {
                         "name":"http-server",
